@@ -33,19 +33,32 @@ export default class GameController extends EventDispatcher {
             let code = event.key;
             code = code.length === 1 ? code.toLowerCase() : code;
             if (mapPressKeys[code]) {
-                this[mapPressKeys[code]]();
+                try {
+                    this[mapPressKeys[code]]();
+                } catch (error) {
+                    console.log(error);
+                }
             }
         };
         window.onkeydown = (event: KeyboardEvent) => {
             let code = event.key;
             code = code.length === 1 ? code.toLowerCase() : code;
             if (mapDownKeys[code]) {
-                this[mapDownKeys[code]]();
+                try {
+                    this[mapDownKeys[code]]();
+                } catch (error) {
+                    console.log(error);
+                }
             }
         };
     }
 
     moveForward() {
-        this.objects.forEach(object => object.position.add(this.vector));
+        console.log('forward');
+        // this.objects.forEach(object => object.position.add(this.vector));
+    }
+
+    moveBackward() {
+        console.log('back');
     }
 }
