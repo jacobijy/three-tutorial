@@ -48,4 +48,16 @@ export default class GameController extends EventDispatcher {
     moveForward() {
         this.objects.forEach(object => object.position.add(this.vector));
     }
+
+    moveLeft() {
+
+    }
+
+    moveRight() {
+
+    }
+
+    moveBackward() {
+        
+    }
 }
