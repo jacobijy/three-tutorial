@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "@types/three": "^0.92.20",
-    "three": "^0.96.0"
+    "three": "^0.96.0",
+    "three-obj-loader": "^1.1.3"
   },
   "devDependencies": {
     "css-loader": "^1.0.0",

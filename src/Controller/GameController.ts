@@ -61,4 +61,16 @@ export default class GameController extends EventDispatcher {
     moveBackward() {
         console.log('back');
     }
+
+    moveLeft() {
+
+    }
+
+    moveRight() {
+
+    }
+
+    moveBackward() {
+        
+    }
 }

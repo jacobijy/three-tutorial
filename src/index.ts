@@ -2,6 +2,8 @@ import * as THREE from 'three';
 import Controller from './Controller/GameController';
 
 Controller.getInstance().registerKeyBinding();
+import Role from './Role/role';
+import '../model/czz3.json';
 
 let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -29,6 +31,9 @@ function moveCamera() {
     camera.position.z += cameraDir;
 }
 setInterval(moveCamera, 500);
+camera.position.x = -500;
+camera.position.y = -500;
+camera.lookAt(0, 0, 0);
 function render() {
     requestAnimationFrame(render);
     cube.rotation.x += 0.01;
@@ -37,4 +42,11 @@ function render() {
     // console.log(date.getTime() - oldDate.getTime());
 
 }
+
+const spider = new Role('model/the_queen_of_pain/max/the_queen_of_pain.obj');
+spider.load();
+// scene.add(spider);
+
 render();
+
+export default scene;
