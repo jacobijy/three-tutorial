@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import * as objlibrary from 'three-obj-loader';
+import * as MTLLoader from 'three-mtl-loader';
 
 let OBJLoader = objlibrary(THREE);
 
@@ -11,9 +12,11 @@ export default class Loader {
         }
     }
     private static instance: Loader = null;
-    private loader = new THREE.OBJLoader();
+    private objLoader = new THREE.OBJLoader();
+    private mtlLoader = new MTLLoader();
 
     load(...args: any[]) {
-        this.loader.load.call(this.loader, ...args);
+        // this.mtlLoader.load()
+        this.objLoader.load.call(this.objLoader, ...args);
     }
 }
